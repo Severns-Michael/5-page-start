@@ -1,0 +1,3 @@
+import SEO from '@/components/SEO/SEO'
+import styles from './Home.module.css'
+export default function Home(){return(<><SEO title='Home' description='Frontline starter home.'/><section className={styles.hero}><div style={{maxWidth:960,margin:'0 auto',padding:'2rem 1rem'}}><h1 className={styles.h1}>Frontline Starter</h1><p className={styles.sub}>TypeScript + Vite + React Router template with CSS Modules.</p></div></section></>)}

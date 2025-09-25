@@ -1,0 +1,2 @@
+type Props={title?:string;description?:string;canonical?:string}
+export default function SEO({title,description,canonical}:Props){const site='Frontline Web & Software';const pageTitle=title?`${title} • ${site}`:site;return(<><title>{pageTitle}</title>{description&&<meta name='description' content={description}/>} {canonical&&<link rel='canonical' href={canonical}/>}<meta property='og:title' content={pageTitle}/>{description&&<meta property='og:description' content={description}/>}</>) }
