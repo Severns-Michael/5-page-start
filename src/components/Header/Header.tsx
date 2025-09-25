@@ -1,2 +1,28 @@
-import { NavLink } from 'react-router-dom'
-export default function Header(){return(<header style={{position:'sticky',top:0,backdropFilter:'blur(8px)',background:'rgba(11,15,26,.72)',borderBottom:'1px solid rgba(255,255,255,.08)'}}><nav style={{display:'flex',gap:'1rem',padding:'0.75rem 1rem',alignItems:'center'}}><NavLink to='/' end>Home</NavLink><NavLink to='/about'>About</NavLink><NavLink to='/services'>Services</NavLink><NavLink to='/portfolio'>Portfolio</NavLink><NavLink to='/locations'>Locations</NavLink><NavLink to='/faq'>FAQ</NavLink><NavLink to='/contact'>Contact</NavLink></nav></header>) }
+import React from 'react';
+import { Link } from 'react-router-dom';
+
+const Header: React.FC = () => (
+  <header style={{ padding: '1rem', background: '#f5f5f5', borderBottom: '1px solid #ddd' }}>
+    <nav>
+      <ul style={{ display: 'flex', gap: '1rem', listStyle: 'none', margin: 0, padding: 0 }}>
+        <li>
+          <Link to="/">Home</Link>
+        </li>
+        <li>
+          <Link to="/about">About</Link>
+        </li>
+        <li>
+          <Link to="/services">Services</Link>
+        </li>
+        <li>
+          <Link to="/contact">Contact</Link>
+        </li>
+        <li>
+          <Link to="/portfolio">Portfolio</Link>
+        </li>
+      </ul>
+    </nav>
+  </header>
+);
+
+export default Header;

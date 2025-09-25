@@ -1,12 +1,26 @@
-import { lazy } from 'react'
-import type { RouteObject } from 'react-router-dom'
-import App from './App'
-const Home=lazy(()=>import('./pages/Home/Home'))
-const About=lazy(()=>import('./pages/About'))
-const Services=lazy(()=>import('./pages/Services'))
-const Portfolio=lazy(()=>import('./pages/Portfolio'))
-const Contact=lazy(()=>import('./pages/Contact'))
-const FAQ=lazy(()=>import('./pages/FAQ'))
-const Locations=lazy(()=>import('./pages/Locations'))
-const NotFound=lazy(()=>import('./pages/NotFound'))
-export const routes: RouteObject[]=[{path:'/',element:<App/>,children:[{index:true,element:<Home/>},{path:'about',element:<About/>},{path:'services',element:<Services/>},{path:'portfolio',element:<Portfolio/>},{path:'contact',element:<Contact/>},{path:'faq',element:<FAQ/>},{path:'locations',element:<Locations/>},{path:'*',element:<NotFound/>}]}]
+import { Routes, Route } from 'react-router-dom'
+import Home from './pages/Home/Home'
+import About from './pages/About/About'
+import Services from './pages/Services/Services'
+import Portfolio from './pages/Portfolio/Portfolio'
+import Contact from './pages/Contact/Contact'
+
+import NotFound from './pages/NotFound/NotFound'
+import Pocatello from './pages/Locations/Pocatello'
+import IdahoFalls from './pages/Locations/IdahoFalls'
+
+
+export function AppRoutes() {
+return (
+<Routes>
+<Route path="/" element={<Home />} />
+<Route path="/about" element={<About />} />
+<Route path="/services" element={<Services />} />
+<Route path="/portfolio" element={<Portfolio />} />
+<Route path="/contact" element={<Contact />} />
+<Route path="*" element={<NotFound />} />
+<Route path="/locations/idaho-falls" element={<IdahoFalls />} />
+<Route path="/locations/pocatello" element={<Pocatello />} />
+</Routes>
+)
+}
